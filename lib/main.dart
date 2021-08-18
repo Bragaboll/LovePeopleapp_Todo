@@ -28,7 +28,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Tarefas'),
+        title: Center(
+            child: Text(
+          'Lista de Tarefas',
+          style: TextStyle(fontSize: 25),
+        )),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -51,7 +55,7 @@ class _HomeState extends State<Home> {
                 children: [
                   Text(
                     '${index + 1} - ${list[index]}',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 25),
                   ),
                   Divider(
                     color: Colors.grey,
@@ -92,7 +96,10 @@ class _FormularioState extends State<Formulario> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('formulário'),
+        title: Text(
+          'Formulário',
+          style: TextStyle(fontSize: 25),
+        ),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -108,6 +115,7 @@ class _FormularioState extends State<Formulario> {
                   width: 40,
                 ),
                 TextFormField(
+                  style: TextStyle(fontSize: 25),
                   controller: itemController,
                   onSaved: (item) {
                     itemController.text = item;
@@ -116,6 +124,7 @@ class _FormularioState extends State<Formulario> {
                     if (item.isEmpty) {
                       return 'Campo Obrigatório!';
                     }
+                    return null;
                   },
                 ),
                 SizedBox(
@@ -129,7 +138,10 @@ class _FormularioState extends State<Formulario> {
                       Navigator.of(context).pop(itemController.text);
                     }
                   },
-                  child: Text('Salvar'),
+                  child: Text(
+                    'Salvar',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
               ],
             ),
